@@ -1,0 +1,20 @@
+/* DESABILITA EL SCROLLBAR */
+body::-webkit-scrollbar {
+   display: none;
+}
+
+.navbar {
+   background-color: white !important;
+   border-bottom: 1px solid lightgray;
+}
+.navbar-collapse {
+   flex-grow: 0;
+}
+
+.navbar-brand {
+   font-weight: 900;
+}
+
+.container-fluid {
+   max-width: 500px;
+}
