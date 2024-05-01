@@ -1,7 +1,13 @@
+const cargando = document.querySelector('.cargando');
+
 fetch('/api/productos')
    .then(response => response.json())
    .then(data => {
       data.forEach(producto => {
+
+         if (!cargando == '') {
+            cargando.style.display = 'none';
+         }
 
          // Creo la card
          const card = document.createElement('div');

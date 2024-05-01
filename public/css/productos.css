@@ -71,3 +71,10 @@
    font-weight: bold;
    font-size: 20px;
 }
+
+.cargando {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90vh;  
+}
