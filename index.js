@@ -3,7 +3,6 @@ import cors from 'cors';
 import axios from 'axios';
 import fs from 'node:fs';
 import { traducir } from './traductor.js';
-import descuentos from './descuentos.json' assert { type: "json" };;
 
 const app = express();
 
@@ -26,6 +25,9 @@ app.get('/descuentos', (req, res) => {
 
 // Envia el JSON con los productos traducidos y con el descuento
 app.get('/api/productos', async (req, res) => {
+
+   let descuentos = JSON.parse(fs.readFileSync('./descuentos.json', 'utf8'));
+
    try {
       const response = await axios.get('https://fakestoreapi.com/products/');
       const data = response.data;
@@ -62,9 +64,15 @@ app.post('/api/compra', (req, res) => {
    const compra = req.body;
    // console.log(compra)
 
-   // Guardo la compra en el archivo json
-   const jsonData = JSON.stringify(compra, null, 2);
-   fs.writeFileSync('compras.json', jsonData);
+   // Obtengo el archivo JSON de las compras
+   let compras = JSON.parse(fs.readFileSync('compras.json', 'utf8'));
+
+   // Le pusheo la compra al array de compras
+   compras.push(compra);
+
+   // Guardo la compra en el archivo JSON
+   const jsonDataCompra = JSON.stringify(compras, null, 2);
+   fs.writeFileSync('compras.json', jsonDataCompra);
 
    res.json({
       message: "Compra registrada.",
