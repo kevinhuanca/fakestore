@@ -24,7 +24,7 @@ fetch('/api/productos')
                <p class="card-text">Categoria: ${producto.category}</p>
                <p class="card-text precio">$${producto.price}</p>
                <p class="oferta-contenedor"></p>
-               <a href="#" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
+               <a href="#" class="btn btn-success agregar-carrito">Agregar al carrito</a>
             </div>
          `;
          document.querySelector('.row').appendChild(card);
@@ -53,7 +53,6 @@ fetch('/api/productos')
          agregarCarritoBtn.addEventListener('click', (event) => {
             event.preventDefault();
 
-            agregarCarritoBtn.classList.remove('btn-primary');
             agregarCarritoBtn.classList.add('disabled');
             agregarCarritoBtn.textContent = 'Agregado!';
 

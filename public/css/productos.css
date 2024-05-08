@@ -28,22 +28,6 @@
    object-fit: contain;
 }
 
-/* kilombo, quitar esto hay btn-success */
-.btn-primary {
-   --bs-btn-bg: #089f26;
-   --bs-btn-border-color: #089f26;
-   --bs-btn-hover-bg: #088421;
-   --bs-btn-hover-border-color: #088421;
-   --bs-btn-active-bg: #088421;
-   --bs-btn-active-border-color: #088421;
-}
-
-/* agregar disabled cuando agrego al carrito */
-.disabled {
-   --bs-btn-disabled-bg: #089f26;
-   --bs-btn-disabled-border-color: #089f26;
-}
-
 /* agregar oferta cuando el productos tiene oferta */
 .oferta {
    display: none;
